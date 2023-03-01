@@ -60,3 +60,21 @@ function mergeSort(arr1, arr2) {
 }
 
 console.log(mergeSort([1, 3, 9], [2, 4, 8]))
+
+function binarySearch(arr, val) {
+  let low = 0
+  let high = arr.length - 1
+  while(low <= high) {
+    let mid = parseInt((low + high) / 2)
+    if(arr[mid] > val) {
+      high = mid - 1
+    } else if(arr[mid] < val){
+      low = mid + 1
+    } else {
+      return mid
+    }
+  }
+  return -1
+}
+
+console.log(binarySearch([1, 3, 4, 5, 8, 9], 5))
